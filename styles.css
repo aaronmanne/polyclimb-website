@@ -4,17 +4,19 @@
 
 /* CSS Variables */
 :root {
-    --primary-color: #00f3ff;
-    --secondary-color: #ff006e;
-    --accent-color: #ffd60a;
+    --primary-color: #00d4ff;      /* Bright neon blue */
+    --secondary-color: #0088ff;    /* Deep electric blue */
+    --accent-color: #ff0000;       /* Pure red - strong and clear */
+    --accent-green: #00ff88;       /* Neon green (for accents only) */
     --bg-dark: #0a0e27;
     --bg-darker: #050814;
     --text-light: #ffffff;
     --text-gray: #b0b8c8;
     --card-bg: rgba(255, 255, 255, 0.05);
     --card-border: rgba(255, 255, 255, 0.1);
-    --glow-primary: 0 0 20px rgba(0, 243, 255, 0.5);
-    --glow-secondary: 0 0 20px rgba(255, 0, 110, 0.5);
+    --glow-primary: 0 0 20px rgba(0, 212, 255, 0.5);
+    --glow-secondary: 0 0 20px rgba(0, 136, 255, 0.5);
+    --glow-accent: 0 0 20px rgba(255, 0, 0, 0.5);
     --transition: all 0.3s ease;
 }
 
@@ -148,7 +150,7 @@ nav {
 
 .neon-text {
     font-size: 4rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -190,14 +192,14 @@ nav {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--text-light);
     box-shadow: var(--glow-primary);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.8);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.4);
 }
 
 .btn-secondary {
@@ -222,10 +224,10 @@ nav {
 .neon-polygon {
     width: 200px;
     height: 200px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     animation: rotate 10s linear infinite;
-    box-shadow: var(--glow-primary);
+    box-shadow: var(--glow-primary), var(--glow-accent);
 }
 
 /* Games Section */
@@ -239,7 +241,7 @@ nav {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -273,7 +275,7 @@ nav {
 
 .game-card.featured {
     border-color: var(--primary-color);
-    background: linear-gradient(135deg, rgba(0, 243, 255, 0.05), rgba(255, 0, 110, 0.05));
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 0, 0, 0.05));
 }
 
 .game-icon {
@@ -291,14 +293,14 @@ nav {
     width: 50px;
     height: 50px;
     background: white;
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     animation: rotate 6s linear infinite;
 }
 
 .cube {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #00f3ff, #ff006e);
+    background: linear-gradient(135deg, var(--accent-green), var(--primary-color));
     transform: rotate(45deg);
 }
 
@@ -366,7 +368,7 @@ nav {
 }
 
 .game-status.coming-soon {
-    background: rgba(255, 214, 10, 0.1);
+    background: rgba(255, 0, 0, 0.1);
     color: var(--accent-color);
 }
 
@@ -413,7 +415,7 @@ nav {
 
 .stat h3 {
     font-size: 3rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -630,7 +632,7 @@ footer {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #00ff88;
+    color: var(--accent-green);
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -644,8 +646,8 @@ footer {
 }
 
 .acknowledgment {
-    background: rgba(255, 0, 110, 0.1);
-    border: 2px solid var(--secondary-color);
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid var(--accent-color);
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
@@ -752,7 +754,7 @@ footer {
 .contact-link {
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: 8px;
     font-weight: 600;
     margin-top: 0.5rem;
